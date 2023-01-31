@@ -5,6 +5,8 @@ import csv
 import urllib.request as urllib2
 from graphqlclient import GraphQLClient
 
+import sys
+
 def multi_split(p):
     if len(p) == 1:
         return p[0]["gamerTag"]
