@@ -4,7 +4,6 @@ import json
 import csv
 import urllib.request as urllib2
 from graphqlclient import GraphQLClient
-import codecs
 
 def multi_split(p):
     if len(p) == 1:
@@ -17,8 +16,12 @@ def multi_split(p):
     return
 
 
-authToken = '8873657796a5e72312e6a87535029012'
-slug = 'hlm'
+with open("token.txt", "r") as r:
+    authToken = r.read().replace("\n" , "")
+try:
+    slug = sys.argv[1]
+except IndexError:
+    slug = "hlm"
 
 apiVersion = 'alpha'
 
